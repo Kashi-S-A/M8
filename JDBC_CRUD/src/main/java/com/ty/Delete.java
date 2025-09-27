@@ -22,7 +22,7 @@ public class Delete {
 
 			String delete = "DELETE FROM employee WHERE eid = 102";
 
-			stm.execute(delete);
+			System.out.println(stm.execute(delete));
 
 			con.close();
 
