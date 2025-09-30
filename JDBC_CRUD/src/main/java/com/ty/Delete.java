@@ -8,7 +8,6 @@ import java.sql.Statement;
 public class Delete {
 
 	public static void main(String[] args) {
-		String driver = "org.postgresql.Driver";
 		String url = "jdbc:postgresql://localhost:5432/employeedb";
 		String username = "postgres";
 		String password = "root";
@@ -20,9 +19,12 @@ public class Delete {
 
 			Statement stm = con.createStatement();
 
-			String delete = "DELETE FROM employee WHERE eid = 102";
+			String delete = "DELETE FROM employee WHERE name='Tony'";
 
-			System.out.println(stm.execute(delete));
+//			System.out.println(stm.execute(delete));
+
+			int result = stm.executeUpdate(delete);
+			System.out.println(result);
 
 			con.close();
 

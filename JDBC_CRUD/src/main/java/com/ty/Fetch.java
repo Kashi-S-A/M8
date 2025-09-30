@@ -23,14 +23,18 @@ public class Fetch {
 
 			String fetch = "select * from employee";
 
+//			System.out.println(stm.executeUpdate(fetch));//Exception
+
+//			System.out.println(stm.execute(fetch));//true
+
 			ResultSet rs = stm.executeQuery(fetch);
-			
+
 			while (rs.next()) {
 				int eid = rs.getInt(1);
 				String name = rs.getString(2);
 				String email = rs.getString(3);
 				double salary = rs.getDouble(4);
-				
+
 				System.out.println(eid);
 				System.out.println(name);
 				System.out.println(email);
