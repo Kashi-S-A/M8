@@ -23,7 +23,11 @@ public class PageB extends HttpServlet {
 		System.out.println(userId);
 
 		PrintWriter pw = resp.getWriter();
-		pw.print("<html><body><h1>Welcome to Servlet PageB</h1></body></html>");
+		pw.print("<html><body>"
+				+ "<h1>Welcome to Servlet PageB</h1>"
+				+ "<h3>User id : "+userId+"</h3>"
+				+ "<h3>User Age : "+userAge+"</h3>"
+				+ "</body></html>");
 
 	}
 }

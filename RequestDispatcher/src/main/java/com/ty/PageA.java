@@ -28,8 +28,8 @@ public class PageA extends HttpServlet {
 		req.setAttribute("id", userId);
 		req.setAttribute("age", userAge);
 
-		RequestDispatcher rd = req.getRequestDispatcher("display.jsp");// to dispatch request to servlet then enter url of servlet
-		rd.forward(req, resp);											//to dispatch request to jsp then enter the name of jsp and to html enter the name of html
-//		rd.include(req, resp);
+		RequestDispatcher rd = req.getRequestDispatcher("pageb");// to dispatch request to servlet then enter url of servlet
+//		rd.forward(req, resp);										//to dispatch request to jsp then enter the name of jsp and to html enter the name of html
+		rd.include(req, resp);
 	}
 }
