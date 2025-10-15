@@ -1,13 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="true"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
 <body>
-	<h1>This is test JSP</h1>
+	<h1>Welcome to JSP Tags</h1>
 	
 	<!-- Declaration Tag -->
 	
@@ -29,7 +25,6 @@
 	<!-- Scriptlet Tag -->
 	
 	<%
-	
 		int a = 100;
 	
 		out.print("This is service method");
