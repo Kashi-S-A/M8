@@ -51,7 +51,7 @@ public class Register extends HttpServlet {
 				rd.forward(req, resp);
 			} else {
 				// failed to register message
-				req.setAttribute("errmsg", "Failed to Registered");
+				req.setAttribute("errmsg", "Failed to Register");
 				rd.forward(req, resp);
 			}
 
