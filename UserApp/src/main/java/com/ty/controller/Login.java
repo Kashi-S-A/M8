@@ -52,7 +52,7 @@ public class Login extends HttpServlet {
 				RequestDispatcher rd = req.getRequestDispatcher("login.jsp");
 				rd.forward(req, resp);
 			}
-
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
