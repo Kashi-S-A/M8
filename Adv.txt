@@ -1,0 +1,472 @@
+========================
+Postgresql DB(pgAdmin 4)
+========================
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+- .exe file and install
+	-unselect Stack Builder
+	-password    : root
+	-confirm pwd : root
+	-port number : 5432
+
+==============================================
+Eclipse IDE for Enterprise and Web developers
+==============================================
+https://www.eclipse.org/downloads/packages/release/2022-12/r/eclipse-ide-enterprise-java-and-web-developers
+
+-extract .zip folder and open eclipse app given inside it.
+
+
+
+============
+Apache Maven
+============
+- Project build tool
+- Open source.
+- it used to manage only java based projects.
+- Used to automate project build process.
+
+-> coding --> compile project -> unit testing -> packaging -> .jar
+
+- to use maven java(jdk) should be installed.
+
+=============
+Maven setup
+=============
+- download the .zip file of maven -https://maven.apache.org/download.cgi
+- set the path of maven.
+	1.copy the path till home directory and paste it in System Variable
+	  MAVEN_HOME	path-till-home-dir
+	2.copy the path till bin directory and paste it in path of System variables
+
+It can use in two ways
+======================
+1. CLI based(maven setup is neccessary)
+2. IDE(Eclipse , Intellij)(maven setup is not neccessary)
+
+Terminologies
+=============
+groupdId     -	name of company(package Name)
+		Ex : 	com.name	==> com.tyss
+			org.name
+			govt.name
+
+artifactId   -  name of project 
+
+version      -  1.0.0 (SNAPSHOT/RELEASES)
+
+packaging    -  .jar(main method)(standalone) .war(web apps)
+
+dependencies -  used add libraries to my project.https://mvnrepository.com/
+		Ex : spring, hibernate,servlet
+
+pom.xml      -  configuration file inside which we keep dependencies.
+		POM(Project Object Model)
+
+repository   -  local(.m2/repository),
+		remote(Nexus/jfrog), 				           				        central(mvnrepository.com)
+
+goals        -	mvn clean
+		mvn compile
+		mvn test
+		mvn package
+		mvn install
+
+
+*************************************************************
+
+1. What is data ?
+2. What is data storage ?
+3. Types of data storage ?
+	-File
+	-DataBase
+4. Types of database ?
+5. File and Database difference ?
+
+
+<plugin>
+	<groupId>org.jacoco</groupId>
+	<artifactId>jacoco-maven-plugin</artifactId>
+	<version>0.8.11</version>
+	<configuration>
+		<excludes>
+		<!--Excluding particular class-->
+			<exclude>com/ksa/model/Customer*</exclude>
+		<!--Exluding entire package-->
+			<exclude>com/ksa/model/**</exclude>
+			<exclude>com/ksa/entity/**</exclude>
+			<exclude>com/ksa/JUnitApplication*</exclude>
+		</excludes>
+	</configuration>
+	<executions>
+		<execution>
+			<goals>
+				<goal>prepare-agent</goal>
+			</goals>
+		</execution>
+		<execution>
+			<id>report</id>
+			<phase>test</phase>
+			<goals>
+				<goal>report</goal>
+			</goals>
+		</execution>
+	</executions>
+</plugin>
+
+
+
+
+
+alt + shift + L
+
+
+
+https://github.com/kashi-s-a
+
+
+String url = "";
+String user = "";
+String password = "";
+getConnection(url,user,password);
+
+String url = "url?user=postgres&password=root";
+
+getConnection(url);
+
+Types Statement
+===============
+1.Statement
+2.PrepareStatement
+3.CallableStatement
+
+=================
+execute the query
+=================
+1. boolean execute()
+	=> we can execute select & non-select queries.
+	=> Suitable for DDL.
+	=> true  : if query can be able return the data from table.
+	=> false : if query cannot be able return the data from table.
+
+2. ResultSet executeQuery()
+	=> Suitable for DQL.
+	=> we can execute select query but we cannot execute non-select query.	
+
+3. int executeUpdate()
+	=> we can execute non-select query.
+	=> we cannot execute select query
+	=> Suitable for DML.
+	=> returns the number of rows affected or manupilated while executing the   	   given query.
+
+====================
+Close the Connection
+====================
+
+=====================
+Use PreparedStatement
+=====================
+1.Insert a new student record into the student table using executeUpdate. Print   	the number of rows inserted.
+
+2.Update the phone of a student (by id) using a PreparedStatement.
+
+3.Delete a student record by name using JDBC and show how many rows got deleted.
+
+Note : Resources needs to be closed properly.
+
+Table student ==> student(id,name,email,std,address,phone)
+
+
+
+
+
+======================
+Dynamic Maven Project
+======================
+1. Create maven project with archetype 'maven-archetype-webapp' of version '1.5'
+
+2. Add Servlet dependency
+
+	<dependency>
+   		 <groupId>javax.servlet</groupId>
+    		 <artifactId>javax.servlet-api</artifactId>
+   		 <version>4.0.1</version>
+   		 <scope>provided</scope>
+	</dependency>
+
+3. Configure build path. Under Order and Export select all the check boxes,then click apply and close button.
+
+4. Update the maven project.
+
+5. Run on the server. 
+	Go to Run As and click on 'Run On server' option
+	and configure the new server and select it then finish.
+
+	Run configuration ==> Dynamic web module - 4.0
+			      Java		 - 1.8
+			      Tomcat		 - 9.0v
+
+Note : Shutdown the server before leaving eclipse or before shutting down the system.
+
+
+http://localhost:8080/ServletProject/
+
+http://localhost:8080/GenericServlet/register.html
+
+http://localhost:8080/GenericServlet/read?name=Tony&email=tony%40gmail.com&password=123456
+
+===========
+HttpServlet
+===========
+1. public void service(ServletRequest,ServletResponse)
+2. protected void service(HttpServletRequest,HttpServletResponse)
+3. protected void doGet(HttpServletRequest,HttpServletResponse)		==> fetch
+4. protected void doPost(HttpServletRequest,HttpServletResponse)	==> save/insert
+5. protected void doPut(HttpServletRequest,HttpServletResponse)		==> update
+6. protected void doDelete(HttpServletRequest,HttpServletResponse)	==> delete
+7. protected void doOptions(HttpServletRequest,HttpServletResponse)
+
+
+
+http://localhost:8080/HttpServletProject/register?un=Adam&ue=adam%40gmail.com&up=12345678&pwd=adam123
+
+
+
+https://www.flipkart.com/mobile-phones-store?otracker=nmenu_sub_Electronics_0_Mobiles
+
+
+=================
+Servlet LifeCycle
+=================
+-web container takes care of servlet lifecycle.
+
+1)Loading the servlet
+	web container will load the servlet into the memory using class loader.
+
+2)Instantiating the servlet.
+	Creates an object of servlet in order to invoke non-static 	methods(service methods like service(),doGet(),doPost() etc..........)
+
+3)Initializing the servlet.
+	Initialize all the members of servlet. during this step init() method of 	servlet will be invoked.
+	
+4)Invoking service method.
+	service method is responsible to take request processes it and produces 	the response.
+	-service()
+	-doGet()
+	-doPost()
+
+5)Destory the servlet.
+	Unloading the servlet object from memory. destroy() method will be called 	just before destroying the servlet.	
+
+Note : 1st req ==> LS
+		   Object
+		   Initialize
+		   service()
+
+	2nd req ==> service()
+	
+	3rd req ==> service()
+
+	All the steps of servlet lifecycle will be executed only once in a servlet lifecycle but the service method will be invoked everytime we send the request.
+
+
+=============================
+sendRedirect(String location)
+=============================
+-
+
+
+
+======================
+JSP(Java Server Pages)
+======================
+To write java code in jsp we make use of JSP tags.
+
+-----------
+Tags of JSP
+-----------
+1. Declaration tag : To declare methods and variables.
+	syntax : <%!  %>
+
+2. Expression tag : Print the value of variable on the browser.
+	syntax : <%=  %>
+
+3. Scriptlet tag : 
+	syntax : <%  %>
+
+==========
+Directives
+==========
+- Elements used to send additional information to the web container.
+
+1) Page	: Specify langauge , contentType, PageEncoding and used to import classes 	  and interfaces.
+	syntax : <%@page %>
+
+2) Include : 
+	syntax : <%@include %>
+
+3) Taglib : Custom tags or third party tags ==> JSTL(Jsp Standard Tag Library)
+	syntax : <%@taglib %>
+
+
+
+
+=============
+JSP LifeCycle
+=============
+1. Translation(JSP --> Servlet)
+
+2. Loading the Servlet
+
+3. Instantiating the servlet
+
+4. Initializng servlet
+	_jspInit()
+
+5. Invoking service
+	_jspService()
+
+6. Destroy Servlet
+	_jspDestroy()
+
+
+
+======================
+Challenges of JDBC API
+======================
+1. Boilerplate code.
+2. No automatic table creation.
+3. Exception handling should be done by developer.
+4. Difficult to establish relation between multiple tables.
+5. No cache memory.
+6. No support for complex scenario.
+7. No Automatic ID creation.
+
+=============================
+Hibernate Advantages/Features
+=============================
+1. ORM(Object Relational Mapping) tools.
+2. It has Automatic table creation
+3. Mechanism to create ids automatically.
+4. Provides cache memory.
+5. Provides mapping associations which helps in establishing relations between 	    	multiple tables.
+6. No need to handle the exceptions.
+7. Supports Dialect.
+
+===============
+CRUD Operations
+===============
+steps:
+
+step 1 : EntityManagerFactory
+	  1) Load the driver
+	  2) Establish connection
+	  3) Tables creation	
+	
+	 EntityManagerFactory emf = Persistence.createEntityManagerFactory("dev");
+
+step 2 : EntityManager
+		EntityManager em = emf.createEntityManager();
+	  Provides methods to perform crud operations
+	 	1)persist()	==> save
+		2)find()	==> fetch
+		3)merge()	==> update
+		4)remove()	==> delete
+
+step 3 : EntityTransaction
+		EntityTransaction et = em.getTransaction();
+
+		All DML statements are not autocommiting.
+		begin()  => to start the transaction
+		commit() => to commit the transaction
+
+========
+HQL/JPQL
+========
+- A database independent query language provided by hibernate.
+- We can design HQL using Entity class reference(cannot use any table names or column names).
+
+SQL => select * from employee;
+HQL => select e from Employee e;
+
+SQL => select name form employee;
+HQL => select e.name from Employee e;
+
+SQL => select * from employee where salary=50000;
+
+//In HQL the data can be passed in two ways
+1) Using index based parameter
+HQL => String hql = "select e from Employee e where e.salary=?1";
+
+	Query query = em.createQuery(hql);
+	query.setParameter(1, 50000.0);
+
+2) Naming based parameter
+HQL => String hql = "select e from Employee e where e.salary=:empSalary";
+	
+	Query query = em.createQuery(hql1);
+	query.setParameter("empSalary", 50000.0);
+
+=============================
+Hibernate Mapping Assocations
+=============================
+- used to establish a relation between entities(tables).
+
+=============================================
+Two ways we can achieve mapping associations.
+=============================================
+  1) Uni-direction
+  2) Bi-direction
+
+=============================
+Types of Mapping Associations
+=============================
+  1) One-To-One : @OneToOne
+	Ex: car , engine
+	    Mobile, battery
+	    Person , Adhar
+
+  2) One-To-Many : @OneToMany
+	Ex: Mobile , SIM
+	    Bank , Account
+	    College, Student
+	    Author, Books
+
+  3) Many-To-One : @ManyToOne
+	Ex: Children , Parent
+	    Account , Bank
+	    Books , Author
+	    Address, User
+
+  4) Many-To-Many : @ManyToMany
+	Ex: Student , Subject
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

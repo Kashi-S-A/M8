@@ -12,7 +12,7 @@ public class Fetch {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("dev");
 		EntityManager em = emf.createEntityManager();
 
-		Employee employee = em.find(Employee.class, 101);
+		Employee employee = em.find(Employee.class, 104);
 
 		if (employee != null) {
 			System.out.println("=======Employee=======");

@@ -9,18 +9,17 @@ import com.ty.entity.Employee;
 
 public class Save {
 	public static void main(String[] args) {
-		EntityManagerFactory emf = 
-				Persistence.createEntityManagerFactory("dev");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("dev");
 
 		EntityManager em = emf.createEntityManager();
 
 		EntityTransaction et = em.getTransaction();
 
 		Employee employee = new Employee();
-		employee.setId(102);
-		employee.setName("Tony");
-		employee.setEmail("tony@gmail.com");
-		employee.setSalary(50000);
+		employee.setId(104);
+		employee.setName("Heisenberg");
+		employee.setEmail("Heisenberg@gmail.com");
+		employee.setSalary(45000);
 
 		et.begin();
 		em.persist(employee);
